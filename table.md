@@ -22,8 +22,8 @@
 | Метрика | Единица измерения | Тип данных (БД) | Частота сбора | Тип сигнала | Первоисточники |Аналитическая задача |
 |---------|------------------|-----------------|---------------|--------------|----------------|---------------------|
 | Наличие дыма | - | BOOLEAN | 1 сек | Дискретный (событие) | [технический паспорт Lifeco LE-SLR-24V, раздел Description](https://www.lifeco-uk.com/wp-content/uploads/2016/02/photoelectric-smoke-detector1.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=photoelectric-smoke-detector1.pdf) | Интеграция с пожарной сигнализацией |
-| Уровень задымлённости | % | TINYINT | 3 сек | Аналоговый | [Sensirion SPS30 Datasheet, p. 6](https://sensirion.com/media/documents/5D4F5E46/616429AA/Sensirion_PM_Sensors_SPS30_Datasheet.pdf) | Прогноз распространения дыма по помещениям |
-| Концентрация CO | ppm | SMALLINT | 5 сек | Аналоговый | [Aqara Gas Detector Manual, p. 7](https://cdn.aqara.com/cdn/website/mainland/static/docs/Gas-Detector_User-manual.pdf) | Корреляция дым/газ для подтверждения пожара |
+| Уровень задымлённости | % | TINYINT | 3 сек | Аналоговый | [Apollo I.S. Optical Smoke Detector, раздел Electrical description](https://apollo-fire.co.uk/wp-content/uploads/2025/10/F0005877_0001.pdf) | Прогноз распространения дыма по помещениям |
+| Концентрация CO | ppm | SMALLINT | 5 сек | Аналоговый | [Winsen ME2-CO Data Sheet, раздел Technical Parameter](https://www.winsen-sensor.com/d/files/me2-co-0-1000ppm-manual（ver1_3）.pdf) | Корреляция дым/газ для подтверждения пожара |
 
 **Устройство:** *Умные колонки*
 | Метрика | Единица измерения | Тип данных (БД) | Частота сбора | Тип сигнала | Первоисточники |Аналитическая задача |
