@@ -21,25 +21,24 @@
 **Устройство:** *Датчики задымления*
 | Метрика | Единица измерения | Тип данных (БД) | Частота сбора | Тип сигнала | Первоисточники |Аналитическая задача |
 |---------|------------------|-----------------|---------------|--------------|----------------|---------------------|
-| Наличие дыма | - | BOOLEAN | 1 сек | Дискретный (событие) |[инструкция Mi Smoke Detector п. Smoke Detection Threshold](https://www.mi.com/global/support/search/Mi%20Smoke%20Detector%20Smoke%20Detection%20Threshold)| Интеграция с пожарной сигнализацией |
-| Уровень задымлённости | % | TINYINT | 3 сек | Аналоговый |[инструкция Mi Smoke Detector п. %/m Measurement Range](https://www.mi.com/global/support/search/Mi%20Smoke%20Detector%20%25%2Fm%20Measurement%20Range)| Прогноз распространения дыма по помещениям |
-| Концентрация CO | ppm | SMALLINT | 5 сек | Аналоговый |[инструкция Mi Smoke Detector п. ppm Detection (0-1000)](https://www.mi.com/global/support/search/Mi%20Smoke%20Detector%20ppm%20Detection%20(0-1000))| Корреляция дым/газ для подтверждения пожара |
+| Наличие дыма | - | BOOLEAN | 1 сек | Дискретный (событие) | [технический паспорт Lifeco LE-SLR-24V, раздел Description](https://www.lifeco-uk.com/wp-content/uploads/2016/02/photoelectric-smoke-detector1.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=photoelectric-smoke-detector1.pdf) | Интеграция с пожарной сигнализацией |
+| Уровень задымлённости | % | TINYINT | 3 сек | Аналоговый | [Sensirion SPS30 Datasheet, p. 6](https://sensirion.com/media/documents/5D4F5E46/616429AA/Sensirion_PM_Sensors_SPS30_Datasheet.pdf) | Прогноз распространения дыма по помещениям |
+| Концентрация CO | ppm | SMALLINT | 5 сек | Аналоговый | [Aqara Gas Detector Manual, p. 7](https://cdn.aqara.com/cdn/website/mainland/static/docs/Gas-Detector_User-manual.pdf) | Корреляция дым/газ для подтверждения пожара |
 
 **Устройство:** *Умные колонки*
 | Метрика | Единица измерения | Тип данных (БД) | Частота сбора | Тип сигнала | Первоисточники |Аналитическая задача |
 |---------|------------------|-----------------|---------------|--------------|----------------|---------------------|
-| Голосовые команды | - | TEXT | событие | Событие |[инструкция Yandex Alice п. Supported Commands List](https://yandex.ru/dev/dialogs/alice/doc/ru/request-simpleutterance) 
-| Анализ популярности команд, обнаружение ошибок распознавания |
-| Сценарии | - | VARCHAR | событие | Категориальный |[]()| Сегментация пользовательского поведения |
-| События | - | TIMESTAMP + VARCHAR | событие | Событие |[]()| Аудит использования, диагностика ошибок |
+| Голосовые команды | - | TEXT | событие | Событие |[инструкция Yandex Alice п. Supported Commands List](https://yandex.ru/dev/dialogs/alice/doc/ru/request-simpleutterance) | Анализ популярности команд, обнаружение ошибок распознавания |
+| Сценарии | - | VARCHAR | событие | Категориальный |[инструкция Yandex Alice п. Smart Home Integration](https://yandex.ru/dev/dialogs/smart-home/doc/en/reference/get-devices)| Сегментация пользовательского поведения |
+| События | - | TIMESTAMP + VARCHAR | событие | Событие |[инструкция Yandex Alice п. Event Logging Specification](https://yandex.ru/dev/dialogs/alice/doc/ru/response)| Аудит использования, диагностика ошибок |
 
 **Устройство:** *Умные светодиодные ленты*
 | Метрика | Единица измерения | Тип данных (БД) | Частота сбора | Тип сигнала | Первоисточники |Аналитическая задача |
 |---------|------------------|-----------------|---------------|--------------|----------------|---------------------|
-| Состояние | - | BOOLEAN | 10 сек | Дискретный |[Yeelight WiFi Light Inter-Operation Specification п. ](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=Yeelight_Inter-Operation_Spec.pdf)| Мониторинг активности зон |
-| Яркость | % | TINYINT | 10 сек | Аналоговый |[]()| Корреляция с уровнем естественного освещения |
-| Цвет (R/G/B) | - | SMALLINT x 3 | при изменении | Аналоговый |[]()| Анализ предпочтений пользователей |
-| Режим | - | VARCHAR | при изменении | Категориальный | | Сегментация сценариев использования |
+| Состояние | - | BOOLEAN | 10 сек | Дискретный |[Yeelight WiFi Light Inter-Operation Specification п. 4.1 ](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=Yeelight_Inter-Operation_Spec.pdf)| Мониторинг активности зон |
+| Яркость | % | TINYINT | 10 сек | Аналоговый |[Yeelight WiFi Light Inter-Operation Specification п. 4.3](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=Yeelight_Inter-Operation_Spec.pdf)| Корреляция с уровнем естественного освещения |
+| Цвет (R/G/B) | - | SMALLINT x 3 | при изменении | Аналоговый |[Yeelight WiFi Light Inter-Operation Specification п. 4.1](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf?spm=a2ty_o01.29997173.0.0.772c5171d4Pxe4&file=Yeelight_Inter-Operation_Spec.pdf)| Анализ предпочтений пользователей |
+| Режим | - | VARCHAR | при изменении | Категориальный |[Philips Hue Lightstrip Plus ]()| Сегментация сценариев использования |
 | Потребляемая мощность | Вт | SMALLINT | 30 сек | Аналоговый | | Оптимизация энергопотребления |
 
 **Устройство:** *Умные выключатели*
